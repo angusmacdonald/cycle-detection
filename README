@@ -1,0 +1,14 @@
+This project contains a python implementation of linked list that allows for cycles to be created (hence it doesn't use the default python list implementation). 
+
+It allows for these algorithms to be tested by generating a specified number of lists and graphing the number of iterations each algorithm required to find a cycle. 
+
+There are two classes:
+• LinkedList: Contains classes for linked lists and linked list nodes, and an implementation of the cycle detection algorithms.
+• GraphPlot: contains functions needed to plot the test data (as illustrated above). This calls the LinkedList class to generate lists with cycles, and runs a specified set of algorithms against each list.
+
+The solution has the following dependencies:
+• Python 1.7
+• Matlibplot (http://matplotlib.sourceforge.net/), which requires numpy (http://numpy.scipy.org/)
+
+
+
