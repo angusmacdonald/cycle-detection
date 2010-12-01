@@ -48,6 +48,9 @@ Function to detect whether there is a cycle in a linked list.
 Returns True/False depending on whether a cycle was detected and an int representing the number of iterations
 required to find the cycle.
 
+This always finds a loop if it exists. Either the fast iterator 'jumps to' the same position as the pointer,
+or it jumps over the slow iterator and the slow iterator then moves on by one, making it in the same position as the pointer.
+
 Implementation: Iterates once through the list with a fast iterator and a slow iterator. If there is a cycle the 
 fast iterator will eventually look at the same element as the slow iterator.
 '''
@@ -55,7 +58,7 @@ def checkForCyclesRabbitAndHare(list):
     numberOfIterations = 0
     
     firstPass = list.getFirst()
-    secondPass = list.getFirst().next
+    secondPass = list.getFirst().next.next
     
     while firstPass is not None and secondPass is not None:
         numberOfIterations = numberOfIterations + 1
@@ -63,6 +66,9 @@ def checkForCyclesRabbitAndHare(list):
         if firstPass.data == secondPass.data: 
             return True, numberOfIterations
         firstPass = firstPass.next
+        
+        if firstPass.data == secondPass.data: 
+            return True, numberOfIterations
         
         if secondPass.next is not None:
             secondPass = secondPass.next.next
@@ -180,9 +186,9 @@ def createLinkedList(size, containsCycle=False, cycleStartPos=0):
 Creates a linked list of size 1000 (with a cycle in it) and checks whether the algorithm detects this.
 '''
 if __name__ == '__main__':
-    testList = createLinkedList(1000, True, 50)
+    testList = createLinkedList(2, False, 1)
 
-    isACycle, iterations = checkForCyclesLargerLoops(testList)
+    isACycle, iterations = checkForCyclesRabbitAndHare(testList)
     if isACycle is True:
         print "There are cycles in the list (number of iterations: {0})".format(iterations)
     else:

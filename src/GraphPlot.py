@@ -46,6 +46,6 @@ if __name__ == '__main__':
                            (LinkedList.checkForCyclesRabbitAndHare, 'Tortoise and Hare Algorithm'), 
                            (LinkedList.checkForCyclesLargerLoops, 'Larger Loops Algorithm')]
     
-    generateGraph('Cycle Detection (cycle occurs near start of list)', functionsToEvaluate, 1000, 0.1)
+ #   generateGraph('Cycle Detection (cycle occurs near start of list)', functionsToEvaluate, 1000, 0.1)
     generateGraph('Cycle Detection (cycle occurs at midpoint list)', functionsToEvaluate, 1000, 0.5)
-    generateGraph('Cycle Detection (cycle occurs towards end of list)', functionsToEvaluate, 1000, 0.9)
+ #   generateGraph('Cycle Detection (cycle occurs towards end of list)', functionsToEvaluate, 1000, 0.9)
