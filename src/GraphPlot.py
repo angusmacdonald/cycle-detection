@@ -1,11 +1,12 @@
 import pylab as graph #@UnresolvedImport
 import LinkedList
 
-'''
-Evaluates the specified Linked List cycle detection algorithm by creating lists with cycles from size 2 up to the
-specified size and returning a (python) list specifying the number of iterations it took to find the cycle.
-'''
+
 def evaluateCycleDetection(sizeOfList, cycleDetectionAlgorithm, locationOfCycle):
+    '''
+    Evaluates the specified Linked List cycle detection algorithm by creating lists with cycles from size 2 up to the
+    specified size and returning a (python) list specifying the number of iterations it took to find the cycle.
+    '''
     numberOfIterations = [] #y-axis
     
     for i in range (2, sizeOfList):
@@ -37,10 +38,11 @@ def generateGraph(titleOfGraph, functionsToEvaluate, sizeOfLists, locationOfCycl
     
     graph.show()
 
-'''
-Creates a linked list of size 1000 (with a cycle in it) and checks whether the algorithm detects this.
-'''
+
 if __name__ == '__main__':
+    '''
+    Creates a linked list of size 1000 (with a cycle in it) and checks whether the algorithm detects this.
+    '''
     functionsToEvaluate = [
                            (LinkedList.checkForCyclesHashSet,'Hashset Algorithm'),
                            (LinkedList.checkForCyclesRabbitAndHare, 'Tortoise and Hare Algorithm'), 
